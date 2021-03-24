@@ -1,6 +1,7 @@
 $buildVersion = $env:BUILDVER
 $moduleName = 'PowerShellModuleProject'
 
+# Define manifest path
 $manifestPath = Join-Path -Path $env:SYSTEM_DEFAULTWORKINGDIRECTORY -ChildPath "$moduleName.psd1"
 
 ## Update build version in manifest
@@ -14,6 +15,7 @@ if ((Test-Path -Path $publicFuncFolderPath) -and ($publicFunctionNames = Get-Chi
 } else {
     $funcStrings = $null
 }
+
 ## Add all public functions to FunctionsToExport attribute
 $manifestContent = $manifestContent -replace "'<FunctionsToExport>'", $funcStrings
 $manifestContent | Set-Content -Path $manifestPath
