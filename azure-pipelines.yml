@@ -32,21 +32,21 @@ stages:
         PathtoPublish: '$(Build.ArtifactStagingDirectory)'
         ArtifactName: 'NuGetPackage'
         publishLocation: 'Container'
-- stage: Test
-  jobs:
-  - job: Test
-    steps:
-    #- task: Pester@10
-    #  inputs:
-    #    scriptFolder: "$(System.DefaultWorkingDirectory)/PowerShellModuleProject.Tests.ps1"
-    #    resultsFile: "$(System.DefaultWorkingDirectory)/PowerShellModuleProject.Tests.XML"
-    #    usePSCore: true
-    #    run32Bit: False
-    - task: PublishTestResults@2
-      inputs:
-        testResultsFormat: "NUnit"
-        testResultsFiles: "$(System.DefaultWorkingDirectory)/PowerShellModuleProject.Tests.XML"
-        failTaskOnFailedTests: true
+# - stage: Test
+#   jobs:
+#   - job: Test
+#     steps:
+#     #- task: Pester@10
+#     #  inputs:
+#     #    scriptFolder: "$(System.DefaultWorkingDirectory)/PowerShellModuleProject.Tests.ps1"
+#     #    resultsFile: "$(System.DefaultWorkingDirectory)/PowerShellModuleProject.Tests.XML"
+#     #    usePSCore: true
+#     #    run32Bit: False
+#     - task: PublishTestResults@2
+#       inputs:
+#         testResultsFormat: "NUnit"
+#         testResultsFiles: "$(System.DefaultWorkingDirectory)/PowerShellModuleProject.Tests.XML"
+#         failTaskOnFailedTests: true
 # - stage: Deploy
 #   jobs:
 #   - job: Deploy
