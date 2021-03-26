@@ -9,8 +9,7 @@ variables:
   patch: $(Build.BuildID)
   buildVer: $(major).$(minor).$(Build.BuildID)
 
-pool:
-  vmImage: 'Default'
+pool: Default
 
 stages:
 - stage: Build
